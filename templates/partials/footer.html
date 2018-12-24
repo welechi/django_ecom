@@ -1,0 +1,162 @@
+{% load i18n %}
+
+
+<footer class="footer container-fluid">
+    {% block footer %}
+        {% comment %}
+            Could be used for displaying links to privacy policy, terms of service, etc.
+            We have a CSS class defined:
+                <ul class="footer_links inline">
+                	
+                </ul>
+         {% endcomment %}
+
+
+	<div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.6577797811888!2d-81.73502294635607!3d41.42494691665215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8830efaaf24b3123%3A0xac60b8fbe2ba70be!2s6700+Northcliff+Ave%2C+Brooklyn%2C+OH+44144%2C+USA!5e0!3m2!1sen!2sng!4v1545339613682" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+<br/>
+<hr/>
+<br/>
+
+<!--  
+	<div class="row">
+      <div class="col-sm-3 pull-left"></div>
+      <div class="col-sm-3">
+        <div class="foot-header">
+          Zhang Ziyi Jewels
+        </div>
+        <div class="foot-links">
+        	<a href="/about">About Us</a>
+        </div>
+        <div class="foot-links">
+        	<a href="/privacy-policy">Privacy Policy</a>
+        </div>
+        <div class="foot-links">
+        	<a href="/faqs">FAQs</a>
+        </div>
+
+      </div>
+    <div class="col-sm-3 pull-right">
+      <div class="foot-header">
+        Payment methods 
+      </div>
+      <div class="foot-links">
+        <p>
+          <img src="https://d20q60vkvwzi8p.cloudfront.net/footer/images/payment1.png" alt="">
+          <img src="https://d20q60vkvwzi8p.cloudfront.net/footer/images/payment2.png" alt="">
+          <img src="https://d20q60vkvwzi8p.cloudfront.net/footer/images/payment4.png" alt="">
+          <img src="https://d20q60vkvwzi8p.cloudfront.net/footer/images/payment3.png" alt="">
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+
+    
+  	</div>
+  <div class="row">
+    <div id="bottom-footer">
+      <div class="row">
+      	<div class="col-md-2"></div>
+        <div class="col-md-2">
+    	<div class="foot-header">
+        	Contact Us:
+      	</div>
+        </div>
+        <div class="col-md-6 phone">
+          <div class="pull-left">
+            <span class="red">zhangziyijewelry@gmail.com <small>e-mail</small></span>
+          </div>
+          <div class="pull-right">
+            <span class="red">+1 (315) 514-0977 <small>Phone</small></span>
+          </div>
+          </div>
+      	<div class="col-md-2"></div>
+
+         
+    </div>
+  </div>
+      <div class="row" id="final-footer">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 text-center">
+        	Copyright © 2018 <a href="/">Zhang Ziyi Jewels</a>. All Rights Reserved
+        </div>
+        <div class="col-sm-4 text-right">
+        	<span class="fa-stack fa-lg">
+              <i class="fa fa-circle text-primary fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          <span class="fa-stack fa-lg">
+              <i class="fa fa-circle text-info fa-stack-2x"></i>
+              <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+            </span>
+          <span class="fa-stack fa-lg">
+              <i class="fa fa-circle text-danger fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+      </div>
+  </div>
+
+-->
+
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-3">
+            <h4 class="title">Zhang Ziyi Jewels</h4>
+            <p>Zhang Ziyi Jewels are hand-crafted by our team of extraordinary artisans and jewelers, dedicated to delivering extraordinary craftsmanship and spectacular designs.</p>
+            <p>6700 Northcliff Avenue, Brooklyn, OH.</p>
+
+            <span class="red">zhangziyijewelry@gmail.com </span>
+            <br/>
+            <span class="red">+1 (315) 514-0977 </span>
+            <ul class="social-icon">
+            <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-google" aria-hidden="true"></i></a>
+            <a href="#" class="social"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+            </ul>
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Account</h4>
+            <span class="acount-icon">          
+            <a href="/accounts/wishlists"><i class="fa fa-heart" aria-hidden="true"></i> Wish List</a>
+            <a href="/basket"><i class="fa fa-cart-plus" aria-hidden="true"></i> Cart</a>
+            <a href="/accounts"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+          </span>
+            </div>
+        <div class="col-sm-3">
+            <a href="/policy"><h4 class="title">Policy</h4>
+            	<p>Click link for our store policies.</p></a>
+            <div class="category">
+            {% for category in categories %}
+            	<a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+			{% endfor %}           
+            </div>
+
+
+
+            </div>
+        <div class="col-sm-3">
+            <h4 class="title">Payment Methods</h4>
+            <p>Secured credit/debit card payment is assured using the stripe payment gateway.</p>
+            <ul class="payment">
+            <li><a href="#"><i class="fa fa-cc-stripe" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>           
+            <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-cc-discover" aria-hidden="true"></i></a></li>
+            </ul>
+            </div>
+        </div>
+        <hr>
+        
+        <div class="row text-center"> Copyright © 2018 <a href="/">Zhang Ziyi Jewels</a>. All Rights Reserved.</div>
+        </div>
+
+        
+         		
+    {% endblock %}
+</footer>

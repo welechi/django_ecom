@@ -1,0 +1,130 @@
+{% extends "layout_2_col.html" %}
+{% load i18n %}
+{% load staticfiles %}
+
+
+{% block extrastyles %}
+    <link href="{% static "oscar/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "oscar/css/shop-homepage.css" %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block navigation %}
+    {% include "partials/nav_primary.html" with expand_dropdown=1 %}
+{% endblock %}
+
+{% block header %}
+  <header>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <a href="{{ homepage_url }}"><img src="{% static "oscar/home.jpg" %}" alt="Home"></a>
+          <div class="carousel-caption">
+          </div>
+        </div>
+
+        <div class="item">
+          <a href="{% url 'catalogue:index' %}"><img src="{% static "oscar/browse.jpg" %}" alt="Browse"></a>
+          <div class="carousel-caption">
+          </div>
+        </div>
+
+        <div class="item">
+          <a href="/offers/holiday-sales-offer/"><img src="{% static "oscar/holiday.jpg" %}" alt="Holiday"></a>
+          <div class="carousel-caption">
+          </div>
+        </div>
+
+        <div class="item">
+          <a href="/offers/chain-pendant-sets-offer/"><img src="{% static "oscar/sets.jpg" %}" alt="Sets"></a>
+          <div class="carousel-caption">
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+    </div>
+  </header>
+{% endblock %}
+
+{% block column_left %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+              <!-- info block 1-->
+              <div class="col-md-4 col-sm-6" style="cursor:default;">
+                <a href="javascript:void(0)" class="info-block" style="cursor:default;">
+                  <i class="pe-7s-check" style="cursor:default;"></i>
+                  <h2 style="cursor:default;">Guaranteed Quality</h2>
+                  <p style="cursor:default;">We don't compromise quality or durability</p>
+                </a>
+              </div>
+              <!-- END info block 1-->
+              <!-- info block 2-->
+              <div class="col-md-4 col-sm-6" style="cursor:default;">
+                <a href="javascript:void(0)" class="info-block" style="cursor:default;">
+                  <i class="pe-7s-diamond" style="cursor:default;"></i>
+                  <h2 style="cursor:default;">Free Appraisal</h2>
+                  <p style="cursor:default;">Certified by a Zhang Ziyi jewelry experts</p>
+                </a>
+              </div>
+              <!-- END info block 2-->
+              <!-- info block 3-->
+              <div class="col-md-4 col-sm-6">
+                <a href="javascript:void(0)" class="info-block" style="cursor:default;">
+                  <i class="pe-7s-star" style="cursor:default;"></i>
+                  <h2 style="cursor:default;">Free Warranty</h2>
+                  <p style="cursor:default;">We stand behind our merchandise</p>
+                </a>
+              </div>
+              <!-- END info block 3-->
+</div>
+
+
+                <div class="row">
+
+    {% for category in categories %}
+                    <div class="col-sm-6 col-lg-6 col-md-6">
+                        <div class="thumbnail">
+                            <a href="{{ category.get_absolute_url }}"><img src="{{ category.image.url }}" alt="{{ category.name }}"></a>
+                        </div>
+                    </div>
+    {% endfor %}
+
+                  </div>
+
+
+
+
+
+<div class="container">
+
+</div>
+{% endblock content %}
+
+
+{% block scripts %}
+    <script src="{% static "oscar/js/jquery.js" %}"></script>
+    <script src="{% static "oscar/vendor/bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+{% endblock %}
