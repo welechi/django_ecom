@@ -1,0 +1,32 @@
+{% extends "checkout/checkout.html" %}
+{% load i18n %}
+
+{% load currency_filters %}
+
+{% block title %}
+    {% trans "Payment details" %} | {{ block.super }}
+{% endblock %}
+
+{% block checkout_nav %}
+    {% include 'checkout/nav.html' with step=3 %}
+{% endblock %}
+
+{% block checkout_title %}{% trans "Enter payment details" %}{% endblock %}
+
+{% block order_contents %}{% endblock %}
+{% block shipping_address %}{% endblock %}
+{% block shipping_method %}{% endblock %}
+{% block payment_method %}{% endblock %}
+
+{% block payment_details %}
+    {% block payment_details_content %}
+        <form action="{% url 'checkout:preview' %}" class="form-stacked" method="POST">
+            {% csrf_token %}
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ stripe_publishable_key }}" data-amount="{{ order_total_incl_tax_cents }}"
+                data-name="{{ shop_name }}"
+                data-description="{{ basket.num_items }} items ({{ order_total.incl_tax|currency }})">
+            </script>
+        </form>
+    {% endblock payment_details_content %}
+{% endblock payment_details %}
